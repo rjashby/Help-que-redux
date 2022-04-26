@@ -46,25 +46,25 @@ describe('ticketListReducer', () => {
     });
   });
   
-  // test('Should successfully edit ticket data in mainTicketList', () => {
-  //   const { names, location, issue, id } = ticketData;
-  //   action = {
-  //     type: 'EDIT_TICKET',
-  //     names: "Fred and George",
-  //     location: "Weasley House",
-  //     issue: "Wand Malfunction",
-  //     id: id
-  //   };
+  test('Should successfully edit ticket data in mainTicketList', () => {
+    const { names, location, issue, id } = ticketData;
+    action = {
+      type: 'ADD_TICKET',
+      names: "Fred and George",
+      location: "Weasley House",
+      issue: "Wand Malfunction",
+      id: id
+    };
 
-  //   expect(ticketListReducer({}, action)).toEqual({
-  //     [id] : {
-  //       names: names,
-  //       location: location,
-  //       issue: issue,
-  //       id: id
-  //     }
-  //   });
-  // });
+    expect(ticketListReducer({}, action)).toEqual({
+      [id] : {
+        names: "Fred and George",
+        location: "Weasley House",
+        issue: "Wand Malfunction",
+        id: id
+      }
+    });
+  });
 
   test('Should successfully delete a ticket', () => {
     action = {
